@@ -6,7 +6,7 @@ public class Main {
         while (i != 0) {
             if ((m == 2 && d == 28) || (m%2 == 1 && m < 8 && d == 31) || (m%2 == 0 && m < 8 && d == 30) || (m%2 == 1 && m > 8 && d == 30) || (m%2 == 0 && m >= 8 && d == 31)) {
                 /*
-                1. Monat: 2
+                1. Monat: 2 = 28
                 2. Monaten: 1, 3, 5, 7 = 31
                 3. Monaten: 4, 6 = 30
                 4. Monaten: 9, 11 = 30
