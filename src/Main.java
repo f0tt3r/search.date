@@ -1,6 +1,13 @@
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
+    public static boolean isValidDate(int d, int m, int y) {
+        if (m < 1 || m > 12 || d < 1 || y < 0) {
+            return false;
+        }
+        int[] daysInMonth = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31}; // 28 weil kein Schaltjahr
+        return d <= daysInMonth[m - 1];
+    }
 
     public static String yourDate(int d, int m, int y, int i) {
         while (i != 0) {
@@ -12,7 +19,7 @@ public class Main {
                 4. Monaten: 9, 11 = 30
                 5. Monaten: 8, 10, 12 = 31
 
-                Wenn man an 1 Stelle Bedingter Ausdruck mit zusätzlicher Funktion isLeapDay() addiert, kann man Schaltjahre dazu berechnen.
+                Wenn man an 1 Stelle bedingter Ausdruck mit zusätzlicher Funktion isLeapDay() addiert, kann man Schaltjahre dazu berechnen.
                  */
                 d = 1;
                 if (m == 12) { //falls Monat 12 dann wird zu 1 statt m++
@@ -31,10 +38,21 @@ public class Main {
     }
 
     public static void main(String[] args) {
-        int day = SimpleIO.getInt("Bitte geben Sie die Tageskomponente des Startdatums ein.");
-        int month = SimpleIO.getInt("Bitte geben Sie die Monatskomponente des Startdatums ein.");
-        int year = SimpleIO.getInt("Bitte geben Sie die Jahreskomponente des Startdatums ein.");
-        int interval = SimpleIO.getInt("Bitte geben Sie die Anzahl an Tagen ein:");
+        int day, month, year, interval;
+
+        do {
+            day = SimpleIO.getInt("Bitte geben Sie die Tageskomponente des Startdatums ein.");
+            month = SimpleIO.getInt("Bitte geben Sie die Monatskomponente des Startdatums ein.");
+            year = SimpleIO.getInt("Bitte geben Sie die Jahreskomponente des Startdatums ein.");
+            interval = SimpleIO.getInt("Bitte geben Sie die Anzahl an Tagen ein:");
+
+            if (!isValidDate(day, month, year)) {
+                SimpleIO.output("Datum ungültig, machen Sie es bitte erneut.");
+            } else if (interval < 0) {
+                SimpleIO.output("Die Anzahl von Tagen muss nicht negativ sein.");
+            }
+
+        } while (!isValidDate(day, month, year) || interval < 0);
 
         System.out.println("Das Datum " + yourDate(day, month, year, interval) + " befindet sich " + interval + " Tage nach dem Startdatum.");
     }
