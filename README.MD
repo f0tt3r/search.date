@@ -1,4 +1,24 @@
-# Aufgabe 3: Enddatum-Berechnung mit Schleife
+## Idee
+
+Gib Datum, Interval an Tagen.
+Bekomm Datum nach diesem Interval (siehe Aufgabenstellung für Details.)
+
+## Ausführen
+
+### Bash
+```bash
+cd src && javac Main.java && java Main && rm Main.class SimpleIO.class && cd -
+```
+### PowerShell
+```powershell
+cd src; javac Main.java; java Main; rm Main.class, SimpleIO.class; cd -
+```
+### CMD Windows
+```cmd
+cd src & javac Main.java & java Main & del Main.class SimpleIO.class & cd ..
+```
+
+## Aufgabe: Enddatum-Berechnung mit Schleife
 
 ### Ziel
 Implementieren Sie ein Programm in Java, das für ein gegebenes Startdatum und eine Anzahl \( t \) an Tagen ein Enddatum berechnet, das genau \( t \) Tage nach dem Startdatum liegt.
