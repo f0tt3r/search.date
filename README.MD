@@ -18,7 +18,7 @@ cd src; javac Main.java; java Main; rm Main.class, SimpleIO.class; cd -
 cd src & javac Main.java & java Main & del Main.class SimpleIO.class & cd ..
 ```
 
-## Aufgabe 3: Enddatum-Berechnung mit Schleife
+## Aufgabe: Enddatum-Berechnung mit Schleife
 
 ### Ziel
 Implementieren Sie ein Programm in Java, das für ein gegebenes Startdatum und eine Anzahl \( t \) an Tagen ein Enddatum berechnet, das genau \( t \) Tage nach dem Startdatum liegt.
@@ -38,7 +38,7 @@ Implementieren Sie ein Programm in Java, das für ein gegebenes Startdatum und e
 
 ### Einschränkungen
 - **Gültigkeit des Datums**: Das Programm darf sich beliebig verhalten, wenn das eingegebene Startdatum nicht existiert oder \( t \) keine positive Zahl ist.
-- **Schaltjahre**: Wir können Schaltjahre hier berücksichtigen.
+- **Schaltjahre**: Die Existenz von Schaltjahren wird in den Berechnungen ignoriert.
 
 ### Beispielausführung
 

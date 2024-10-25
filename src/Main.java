@@ -1,6 +1,14 @@
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
+    public static boolean isValidDate(int d, int m, int y) {
+        if (m < 1 || m > 12 || d < 1 || y < 0) {
+            return false;
+        }
+        int[] daysInMonth = {31, (isLeapDay(y) ? 29 : 28), 31, 30, 31, 30, 31, 31, 30, 31, 30, 31}; // 28 oder 29 nach bed. Ausdrück
+        return d <= daysInMonth[m - 1];
+    }
+
     public static boolean isLeapDay(int y) {
         return (y % 4 == 0 && y % 100 != 0) || y % 400 == 0;
     }
