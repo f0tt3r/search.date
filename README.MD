@@ -18,7 +18,7 @@ Implementieren Sie ein Programm in Java, das für ein gegebenes Startdatum und e
 
 ### Einschränkungen
 - **Gültigkeit des Datums**: Das Programm darf sich beliebig verhalten, wenn das eingegebene Startdatum nicht existiert oder \( t \) keine positive Zahl ist.
-- **Schaltjahre**: Die Existenz von Schaltjahren wird in den Berechnungen ignoriert.
+- **Schaltjahre**: Wir können Schaltjahre hier berücksichtigen.
 
 ### Beispielausführung
 
