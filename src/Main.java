@@ -40,10 +40,21 @@ public class Main {
     }
 
     public static void main(String[] args) {
-        int day = SimpleIO.getInt("Bitte geben Sie die Tageskomponente des Startdatums ein.");
-        int month = SimpleIO.getInt("Bitte geben Sie die Monatskomponente des Startdatums ein.");
-        int year = SimpleIO.getInt("Bitte geben Sie die Jahreskomponente des Startdatums ein.");
-        int interval = SimpleIO.getInt("Bitte geben Sie die Anzahl an Tagen ein:");
+        int day, month, year, interval;
+
+        do {
+            day = SimpleIO.getInt("Bitte geben Sie die Tageskomponente des Startdatums ein.");
+            month = SimpleIO.getInt("Bitte geben Sie die Monatskomponente des Startdatums ein.");
+            year = SimpleIO.getInt("Bitte geben Sie die Jahreskomponente des Startdatums ein.");
+            interval = SimpleIO.getInt("Bitte geben Sie die Anzahl an Tagen ein:");
+
+            if (!isValidDate(day, month, year)) {
+                SimpleIO.output("Datum ungültig, machen Sie es bitte erneut.");
+            } else if (interval < 0) {
+                SimpleIO.output("Die Anzahl von Tagen muss nicht negativ sein.");
+            }
+
+        } while (!isValidDate(day, month, year) || interval < 0);
 
         System.out.println("Das Datum " + yourDate(day, month, year, interval) + " befindet sich " + interval + " Tage nach dem Startdatum.");
     }
